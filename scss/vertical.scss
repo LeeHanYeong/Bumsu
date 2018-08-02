@@ -1,0 +1,70 @@
+#wrap {
+  width: 100%;
+  height: 100%;
+  background-color: #ccc;
+}
+
+.content {
+  width: 600px;
+  height: 300px;
+  margin: 0 auto;
+  
+  padding: 10px;
+  background-color: #fff;
+  
+  > .content-left {
+    float: left;
+    width: 49%;
+    margin-right: 1%;
+    height: 100%;
+    
+    > .menu-list {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      
+      > .menu-item {
+        width: 100%;
+        
+        // 버튼이 4개이므로, 가운데 여백은 총 3칸
+        // 여백 한칸을 2%씩으로 잡으면 남는 height는 94%
+        // 94%를 4로 나누면 23.5%가 하나당 차지하는 height
+        height: 23.5%;
+        // 각 칸은 아래마진으로 2%를 가짐
+        // 마지막요소는 아래마진을 가지면 안되므로 아래 있는 가상선택자 :last-child를 사용
+        margin-bottom: 2%;
+        
+        // .menu-item중 마지막 요소는 margin-bottom을 없앰
+        &:last-child {
+          margin-bottom: 0;
+        }
+        
+        // padding, border를 포함한 영역이 전체 크기가 되도록 함
+        box-sizing: border-box;
+        
+        // 아래의 a요소를 수직중앙 정렬하기 위해 table속성 지정
+        display: table;
+        vertical-align: middle;
+        
+        // 버튼처럼 보이기 위함
+        text-align: center;
+        border: 1px solid black;
+        border-radius: 3px;
+        
+        > a {
+          // 부모 요소 기준 수직중앙 정렬하는 법
+          display: table-cell;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+  > .content-right {
+    float: left;
+    background-color: #ddd;
+    width: 49%;
+    margin-left: 1%;
+    height: 100%;
+  }
+}
+
