@@ -9,6 +9,12 @@
   height: 300px;
   margin: 0 auto;
   
+  // 위에서부터 전체 height기준 50%만큼 내려간 후 (top: 50%)
+  // 자신의 height의 50%만큼 올라간다 (translateY(-50%))
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  
   padding: 10px;
   background-color: #fff;
   
