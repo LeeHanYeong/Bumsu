@@ -1,0 +1,61 @@
+.clearfix::after {
+  content: '';
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+#wrap {
+  height: 100%;
+}
+
+.container {
+  height: 100%;
+}
+
+.left {
+  float: left;
+  width: 200px;
+  height: 100%;
+  background-color: red;
+}
+
+.right {
+  float: left;
+  width: calc(100% - 200px);
+  height: 100%;
+  background-color: blue;
+}
+
+.right > ul.first-menu-list > li.first-menu-item {
+  float: left;
+  background-color: #ccc;
+  text-align: center;
+}
+
+.right > ul.first-menu-list > li.first-menu-item > a.first-menu-link {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+  height: 40px;
+  line-height: 40px;
+  transition-duration: 1s;
+}
+
+.right > ul.first-menu-list > li.first-menu-item > a.first-menu-link > ul.second-menu-list {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  background-color: #999;
+  transition: visibility 0s, opacity 0.2s linear;
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+}
+
+.right > ul.first-menu-list > li.first-menu-item > a.first-menu-link:hover > ul.second-menu-list {
+  visibility: visible;
+  opacity: 1;
+  height: auto;
+}
